@@ -88,3 +88,9 @@
 | R-2.2-REVERSALS | 2.2 | DONE | Money movement reversals |
 | R-2.2-MULTICURRENCY | 2.2 | DONE | Multi-currency account isolation |
 | R-2.2-TESTS | 2.2 | DONE | 144 backend tests / 672 assertions pass on MariaDB |
+
+| R-2.3-EXPENSES | 2.3 | DONE | Expenses with incurred/paid dates |
+| R-2.3-BILLS | 2.3 | DONE | Bills to pay and ageing |
+| R-2.3-PAYMENTS | 2.3 | DONE | Bill payment allocation |
+| R-2.3-COGS | 2.3 | DONE | Stock purchase vs COGS documented |
+| R-2.3-TESTS | 2.3 | DONE | 148 backend tests / 693 assertions pass on MariaDB |

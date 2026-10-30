@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\BranchUserController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\CheckoutController;
 use App\Http\Controllers\Api\CustomerController;
+use App\Http\Controllers\Api\ExpenseController;
 use App\Http\Controllers\Api\HealthController;
 use App\Http\Controllers\Api\MeController;
 use App\Http\Controllers\Api\MoneyMovementController;
@@ -16,6 +17,7 @@ use App\Http\Controllers\Api\ProductUnitController;
 use App\Http\Controllers\Api\SaleController;
 use App\Http\Controllers\Api\StockLevelController;
 use App\Http\Controllers\Api\StockMovementController;
+use App\Http\Controllers\Api\SupplierBillController;
 use App\Http\Controllers\Api\UnitController;
 use Illuminate\Support\Facades\Route;
 
@@ -123,6 +125,22 @@ Route::middleware(['auth:sanctum', 'active'])->group(function () {
                 ->middleware('branch.permission:branch.finance.manage');
             Route::post('/money-movements/{moneyMovement}/reverse', [MoneyMovementController::class, 'reverse'])
                 ->middleware('branch.permission:branch.finance.manage');
+
+            Route::get('/expenses', [ExpenseController::class, 'index'])
+                ->middleware('branch.permission:branch.finance.view');
+            Route::post('/expenses', [ExpenseController::class, 'store'])
+                ->middleware('branch.permission:branch.finance.manage');
+            Route::post('/expenses/{expense}/pay', [ExpenseController::class, 'pay'])
+                ->middleware('branch.permission:branch.finance.manage');
+
+            Route::get('/supplier-bills', [SupplierBillController::class, 'index'])
+                ->middleware('branch.permission:branch.finance.view');
+            Route::post('/supplier-bills', [SupplierBillController::class, 'store'])
+                ->middleware('branch.permission:branch.finance.manage');
+            Route::post('/supplier-bills/{supplierBill}/pay', [SupplierBillController::class, 'pay'])
+                ->middleware('branch.permission:branch.finance.manage');
+            Route::get('/bills-to-pay/ageing', [SupplierBillController::class, 'ageing'])
+                ->middleware('branch.permission:branch.finance.view');
             Route::post('/products/{product}/stock/movements', [StockMovementController::class, 'store'])
                 ->middleware('branch.permission:branch.inventory.manage');
             Route::post('/stock/movements/{stockMovement}/reverse', [StockMovementController::class, 'reverse'])

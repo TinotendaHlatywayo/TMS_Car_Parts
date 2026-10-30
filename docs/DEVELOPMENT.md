@@ -87,6 +87,13 @@ In production `SEED_ADMIN_PASSWORD` is required. Local development defaults to `
 - `GET /api/branches/{branch}/money-movements`
 - `POST /api/branches/{branch}/money-movements/{movement}/reverse`
 
+## Expenses and bills to pay (Stage 2.3)
+- `GET/POST /api/branches/{branch}/expenses`
+- `POST /api/branches/{branch}/expenses/{expense}/pay`
+- `GET/POST /api/branches/{branch}/supplier-bills`
+- `POST /api/branches/{branch}/supplier-bills/{bill}/pay`
+- `GET /api/branches/{branch}/bills-to-pay/ageing`
+
 ## Tests
 - Backend: `cd backend && php artisan test` (requires PHP with `pdo_sqlite`)
 - If the local PHP 8.4 CLI lacks `pdo_sqlite`, run the suite with a temporary extracted extension:

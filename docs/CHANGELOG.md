@@ -97,6 +97,12 @@
 - Stage 1.8: End-to-end acceptance
 ### Added
 - Stage 2.2: Payment accounts and cash movements
+### Added
+- Stage 2.3: Expenses and bills to pay
+  - Added `expenses`, `supplier_bills` and `supplier_bill_payments` tables
+  - Added expense incurred/paid lifecycle and payment
+  - Added supplier bill payment allocation and ageing
+  - Added 4 finance tests
   - Added `payment_accounts` and `money_movements` tables
   - Added account, movement, transfer and reversal APIs
   - Added immutable money movement and paired transfer handling

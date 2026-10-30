@@ -100,3 +100,10 @@
 - **Reversal**: a reversal is an opposite movement linked to the original; original movements are never edited or deleted.
 - **Multi-currency**: each account has one currency; movements must match the account currency. Cross-currency transfers are rejected.
 - **Reconciliation**: statement reconciliation is not implemented; do not claim bank reconciliation.
+
+## 2.3 Expenses and bills to pay
+- **Incurred vs paid**: expenses store `incurred_date`, `paid_date`, and `status`; paying an expense creates an `adjustment_out` money movement.
+- **Bills to pay**: supplier bills track amount, paid amount, due date and status; payments allocate against the bill and update ageing buckets.
+- **Ageing**: buckets are current, 1-30, 31-60, 61-90 and 90+ days based on due date.
+- **Stock purchase vs COGS**: a stock purchase creates inventory value and a supplier liability; it is not COGS until the stock is sold. Paying a bill reduces cash/liability and is not an expense.
+- **Attachments**: attachment path metadata is supported; safe file upload storage is documented as follow-up.

@@ -64,6 +64,7 @@ These rules are canonical for all TorqueERP modules. Where a module does not yet
 ## Finance
 - Invoiced revenue, cash collected, receivables, supplier liabilities, inventory value, COGS, expenses incurred and cash paid are separate metrics.
 - A stock purchase is not automatically COGS; paying a bill is not the same as incurring an expense.
+- Expenses distinguish incurred date from paid date. Supplier bills age by due date and payment allocation.
 - Dashboard and reports share one metric dictionary.
 
 ## Price negotiation
