@@ -7,6 +7,8 @@ use App\Http\Controllers\Api\CheckoutController;
 use App\Http\Controllers\Api\CustomerController;
 use App\Http\Controllers\Api\HealthController;
 use App\Http\Controllers\Api\MeController;
+use App\Http\Controllers\Api\MoneyMovementController;
+use App\Http\Controllers\Api\PaymentAccountController;
 use App\Http\Controllers\Api\PlatformAccessController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\ProductConversionController;
@@ -105,6 +107,22 @@ Route::middleware(['auth:sanctum', 'active'])->group(function () {
                 ->middleware('branch.permission:branch.inventory.view');
             Route::get('/stock/movements', [StockMovementController::class, 'index'])
                 ->middleware('branch.permission:branch.inventory.view');
+
+            Route::get('/payment-accounts', [PaymentAccountController::class, 'index'])
+                ->middleware('branch.permission:branch.finance.view');
+            Route::post('/payment-accounts', [PaymentAccountController::class, 'store'])
+                ->middleware('branch.permission:branch.finance.manage');
+            Route::patch('/payment-accounts/{paymentAccount}', [PaymentAccountController::class, 'update'])
+                ->middleware('branch.permission:branch.finance.manage');
+
+            Route::get('/money-movements', [MoneyMovementController::class, 'index'])
+                ->middleware('branch.permission:branch.finance.view');
+            Route::post('/payment-accounts/{paymentAccount}/movements', [MoneyMovementController::class, 'store'])
+                ->middleware('branch.permission:branch.finance.manage');
+            Route::post('/transfers', [MoneyMovementController::class, 'transfer'])
+                ->middleware('branch.permission:branch.finance.manage');
+            Route::post('/money-movements/{moneyMovement}/reverse', [MoneyMovementController::class, 'reverse'])
+                ->middleware('branch.permission:branch.finance.manage');
             Route::post('/products/{product}/stock/movements', [StockMovementController::class, 'store'])
                 ->middleware('branch.permission:branch.inventory.manage');
             Route::post('/stock/movements/{stockMovement}/reverse', [StockMovementController::class, 'reverse'])

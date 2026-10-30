@@ -6,6 +6,7 @@ use App\Models\Branch;
 use App\Models\Sale;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpKernel\Exception\ConflictHttpException;
 
 final class SaleVoidService
@@ -32,7 +33,7 @@ final class SaleVoidService
         $reason = trim($reason);
 
         if ($reason === '') {
-            throw \Illuminate\Validation\ValidationException::withMessages([
+            throw ValidationException::withMessages([
                 'reason' => 'A void reason is required.',
             ]);
         }

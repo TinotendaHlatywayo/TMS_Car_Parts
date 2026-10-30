@@ -24,6 +24,7 @@ Phase 1
 - 1.7 Sales history and correction foundation: DONE (MariaDB tested; SQLite blocked by missing pdo_sqlite driver)
 - 1.8 End-to-end acceptance: DONE (MariaDB tested; SQLite blocked by missing pdo_sqlite driver)
 - Phase 1 complete pending owner approval
+- 2.2 Payment accounts and cash movements: DONE (MariaDB tested; SQLite blocked by missing pdo_sqlite driver)
 
 ## Quick start (development)
 See `docs/DEVELOPMENT.md` for setup, run, test, lint/format/type commands.

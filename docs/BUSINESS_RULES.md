@@ -56,6 +56,8 @@ These rules are canonical for all TorqueERP modules. Where a module does not yet
 
 ## Currency and time
 - Every money movement records amount, currency, time, method, account and reference where relevant.
+- Payment accounts are branch-owned and single-currency. Transfers are paired movements, not income or expense.
+- Money movements are immutable; corrections use reversals.
 - Store amounts in integer minor units with ISO 4217 currency codes. FX conversions preserve rate, source, effective time and rounding basis.
 - Store timestamps in UTC and display in branch/user timezone. Business dates for reports/shifts/periods are explicit.
 

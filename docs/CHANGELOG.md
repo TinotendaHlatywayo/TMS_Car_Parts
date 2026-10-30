@@ -95,6 +95,12 @@
 - Stage 1.7: Sales history and correction foundation
 ### Added
 - Stage 1.8: End-to-end acceptance
+### Added
+- Stage 2.2: Payment accounts and cash movements
+  - Added `payment_accounts` and `money_movements` tables
+  - Added account, movement, transfer and reversal APIs
+  - Added immutable money movement and paired transfer handling
+  - Added 6 finance tests for transfer, reversal, duplicate and multi-currency
   - Added `EndToEndTest` covering product, stock, customer, sale, payment, receipt and history
   - Added duplicate checkout, invalid discount, unauthorized override, tenant isolation and oversell tests
   - Verified migrations and frontend build

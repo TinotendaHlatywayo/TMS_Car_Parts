@@ -3,13 +3,12 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\VoidSaleRequest;
 use App\Http\Requests\CreateReturnRequest;
 use App\Models\Branch;
 use App\Models\Sale;
 use App\Models\SaleReturn;
-use App\Support\SaleVoidService;
 use App\Support\SaleReturnService;
+use App\Support\SaleVoidService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 

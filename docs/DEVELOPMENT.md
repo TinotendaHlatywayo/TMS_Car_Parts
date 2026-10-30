@@ -80,6 +80,13 @@ In production `SEED_ADMIN_PASSWORD` is required. Local development defaults to `
 - `POST /api/branches/{branch}/sales/{sale}/returns` creates a return request.
 - Frontend: `/app/sales`.
 
+## Payment accounts and cash movements (Stage 2.2)
+- `GET/POST/PATCH /api/branches/{branch}/payment-accounts`
+- `POST /api/branches/{branch}/payment-accounts/{account}/movements`
+- `POST /api/branches/{branch}/transfers`
+- `GET /api/branches/{branch}/money-movements`
+- `POST /api/branches/{branch}/money-movements/{movement}/reverse`
+
 ## Tests
 - Backend: `cd backend && php artisan test` (requires PHP with `pdo_sqlite`)
 - If the local PHP 8.4 CLI lacks `pdo_sqlite`, run the suite with a temporary extracted extension:

@@ -10,6 +10,7 @@ use App\Models\SaleReturnItem;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\ValidationException;
+use Symfony\Component\HttpKernel\Exception\ConflictHttpException;
 
 final class SaleReturnService
 {
@@ -28,7 +29,7 @@ final class SaleReturnService
         }
 
         if ($sale->status !== 'posted') {
-            throw new \Symfony\Component\HttpKernel\Exception\ConflictHttpException('Returns can only be requested for posted sales.');
+            throw new ConflictHttpException('Returns can only be requested for posted sales.');
         }
 
         $idempotencyKey = trim($idempotencyKey);
@@ -47,7 +48,7 @@ final class SaleReturnService
 
         if ($existing) {
             if (! hash_equals($existing->request_hash, $requestHash)) {
-                throw new \Symfony\Component\HttpKernel\Exception\ConflictHttpException('The Idempotency-Key has already been used with a different return payload.');
+                throw new ConflictHttpException('The Idempotency-Key has already been used with a different return payload.');
             }
 
             return $existing->load('items');
@@ -77,7 +78,7 @@ final class SaleReturnService
 
             if ($existing) {
                 if (! hash_equals($existing->request_hash, $requestHash)) {
-                    throw new \Symfony\Component\HttpKernel\Exception\ConflictHttpException('The Idempotency-Key has already been used with a different return payload.');
+                    throw new ConflictHttpException('The Idempotency-Key has already been used with a different return payload.');
                 }
 
                 return $existing->load('items');

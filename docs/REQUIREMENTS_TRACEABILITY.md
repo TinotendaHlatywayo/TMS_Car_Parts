@@ -81,3 +81,10 @@
 | R-1.8-SECURITY | 1.8 | DONE | Unauthorized override and tenant isolation |
 | R-1.8-MIGRATION | 1.8 | DONE | Migration and build verification |
 | R-1.8-TESTS | 1.8 | DONE | 138 backend tests / 649 assertions pass on MariaDB |
+
+| R-2.2-ACCOUNTS | 2.2 | DONE | Payment account management |
+| R-2.2-MOVEMENTS | 2.2 | DONE | Immutable money movements |
+| R-2.2-TRANSFERS | 2.2 | DONE | Linked paired transfer movements |
+| R-2.2-REVERSALS | 2.2 | DONE | Money movement reversals |
+| R-2.2-MULTICURRENCY | 2.2 | DONE | Multi-currency account isolation |
+| R-2.2-TESTS | 2.2 | DONE | 144 backend tests / 672 assertions pass on MariaDB |

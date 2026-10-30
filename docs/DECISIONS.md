@@ -92,3 +92,11 @@
 ## 1.8 End-to-end acceptance
 - **Acceptance coverage**: product setup, opening stock, customer, checkout, payment, receipt, history, duplicate checkout, invalid discount, unauthorized override, tenant isolation and oversell protection are covered by `EndToEndTest`.
 - **Phase 1 defects fixed during acceptance**: none remaining; migration and build checks pass.
+
+## 2.2 Payment accounts and cash movements
+- **Payment accounts**: branch-owned cash, bank and mobile money accounts with a currency.
+- **Money movements**: immutable movements with amount, currency, direction, method/account, time, reference, reason, actor, source and reversal link.
+- **Transfers**: represented as linked paired `transfer_out` and `transfer_in` movements; they are not income or expense.
+- **Reversal**: a reversal is an opposite movement linked to the original; original movements are never edited or deleted.
+- **Multi-currency**: each account has one currency; movements must match the account currency. Cross-currency transfers are rejected.
+- **Reconciliation**: statement reconciliation is not implemented; do not claim bank reconciliation.

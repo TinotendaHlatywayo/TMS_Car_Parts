@@ -6,6 +6,7 @@ use App\Models\Branch;
 use App\Models\Customer;
 use App\Models\Platform;
 use App\Models\Product;
+use App\Models\Unit;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Str;
@@ -33,7 +34,7 @@ class EndToEndTest extends TestCase
 
     private Product $product;
 
-    private \App\Models\Unit $unit;
+    private Unit $unit;
 
     protected function setUp(): void
     {
