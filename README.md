@@ -22,7 +22,8 @@ Phase 1
 - 1.5 POS cart and price calculation: DONE (MariaDB tested; SQLite blocked by missing pdo_sqlite driver)
 - 1.6 Checkout, payments and receipt: DONE (MariaDB tested; SQLite blocked by missing pdo_sqlite driver)
 - 1.7 Sales history and correction foundation: DONE (MariaDB tested; SQLite blocked by missing pdo_sqlite driver)
-- 1.8+ Not started (owner approval required)
+- 1.8 End-to-end acceptance: DONE (MariaDB tested; SQLite blocked by missing pdo_sqlite driver)
+- Phase 1 complete pending owner approval
 
 ## Quick start (development)
 See `docs/DEVELOPMENT.md` for setup, run, test, lint/format/type commands.

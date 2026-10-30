@@ -88,3 +88,7 @@
 - **Void**: authorized void reverses stock and marks sale/payment voided; duplicate void is idempotent.
 - **Returns**: return requests record authorization, quantity, restock decision and refund/credit state; stock restock and refund execution are documented follow-up work.
 - **No hard deletes**: posted sales remain and are corrected through void/reversal/return records.
+
+## 1.8 End-to-end acceptance
+- **Acceptance coverage**: product setup, opening stock, customer, checkout, payment, receipt, history, duplicate checkout, invalid discount, unauthorized override, tenant isolation and oversell protection are covered by `EndToEndTest`.
+- **Phase 1 defects fixed during acceptance**: none remaining; migration and build checks pass.

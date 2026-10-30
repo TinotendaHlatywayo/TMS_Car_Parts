@@ -93,6 +93,11 @@
 - Stage 1.6: Checkout, payments and receipt
 ### Added
 - Stage 1.7: Sales history and correction foundation
+### Added
+- Stage 1.8: End-to-end acceptance
+  - Added `EndToEndTest` covering product, stock, customer, sale, payment, receipt and history
+  - Added duplicate checkout, invalid discount, unauthorized override, tenant isolation and oversell tests
+  - Verified migrations and frontend build
   - Added sales history/detail API and frontend page
   - Added authorized sale void with stock reversal
   - Added sale return request foundation with duplicate protection

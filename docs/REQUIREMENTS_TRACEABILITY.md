@@ -74,3 +74,10 @@
 | R-1.7-RETURNS | 1.7 | DONE | Return workflow foundation |
 | R-1.7-PERMISSIONS | 1.7 | DONE | Permission and duplicate void/return tests |
 | R-1.7-TESTS | 1.7 | DONE | 133 backend tests / 613 assertions pass on MariaDB |
+
+| R-1.8-E2E | 1.8 | DONE | End-to-end product→stock→customer→sale→receipt→history |
+| R-1.8-DUPLICATE | 1.8 | DONE | Duplicate checkout protection |
+| R-1.8-CONCURRENCY | 1.8 | DONE | Oversell protection |
+| R-1.8-SECURITY | 1.8 | DONE | Unauthorized override and tenant isolation |
+| R-1.8-MIGRATION | 1.8 | DONE | Migration and build verification |
+| R-1.8-TESTS | 1.8 | DONE | 138 backend tests / 649 assertions pass on MariaDB |
