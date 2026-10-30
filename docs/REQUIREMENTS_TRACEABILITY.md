@@ -1,0 +1,56 @@
+
+| Req ID | Stage | Status | Notes |
+|---|---|---|---|
+| R-0.4-SCHEMA | 0.4 | DONE | Foundation migrations with FKs, uniques, ULID, UTC timestamps, soft deletes, document sequences |
+
+| Req ID | Stage | Status | Notes |
+|---|---|---|---|
+| R-0.5-AUTH | 0.5 | DONE | Breeze API + Sanctum, login/logout/session flow available |
+| R-0.5-TENANT | 0.5 | DONE | Server-side branch context, default-deny policy, cross-branch negative test added |
+
+| Req ID | Stage | Status | Notes |
+|---|---|---|---|
+| R-0.6-UI | 0.6 | DONE | Responsive shells, reusable components, loading/empty/error/success/denied states |
+| R-0.6-A11Y | 0.6 | DONE | Keyboard focus, ARIA labels, skip link, semantic structure |
+
+| Req ID | Stage | Status | Notes |
+|---|---|---|---|
+| R-0.7-SKELETON | 0.7 | DONE | Public placeholder, login, platform landing, branch workspace wired with routing and auth |
+| R-0.7-TESTS | 0.7 | DONE | Migrations, tenant isolation tests, regression tests passed |
+
+| Req ID | Stage | Status | Notes |
+|---|---|---|---|
+| R-1.1-ROLES | 1.1 | DONE | Fixed branch role catalogue; unknown roles grant no permissions |
+| R-1.1-PERMISSIONS | 1.1 | DONE | Default-deny branch permissions; platform permissions are separate and not assignable to branch memberships |
+| R-1.1-MEMBERSHIP | 1.1 | DONE | Branch user list/create/update/remove with audit entries and last-admin protection |
+| R-1.1-TENANT | 1.1 | DONE | Route branch/membership server resolution; negative cross-branch tests pass |
+| R-1.1-REVOCATION | 1.1 | DONE | Permissions re-read per request; losing last membership deletes tokens and sessions |
+| R-1.1-UI | 1.1 | DONE | Branch users/roles page with loading, error, empty and permission-denied states |
+| R-1.1-TESTS | 1.1 | DONE | 34 backend tests passing on SQLite and MariaDB (dedicated test DB), including direct API/cross-branch/revocation cases; frontend typecheck/lint/build pass |
+
+| Req ID | Stage | Status | Notes |
+|---|---|---|---|
+| R-1.2-CATALOGUE | 1.2 | DONE | Branch-owned products with SKU/barcode, price, category, base unit, active/archive and stock foundation |
+| R-1.2-CATEGORIES | 1.2 | DONE | Category CRUD, per-branch slugs, parent validation, cycle guard and archive semantics |
+| R-1.2-UNITS | 1.2 | DONE | Unit CRUD, uppercase codes, decimal policy, per-branch uniqueness and archive semantics |
+| R-1.2-CONVERSION | 1.2 | DONE | Explicit alternate units and conversion factors through the product base unit; inactive/unknown units rejected |
+| R-1.2-MONEY | 1.2 | DONE | Integer minor-unit prices with ISO 4217 exponents and major-unit API input/output |
+| R-1.2-STOCK | 1.2 | DONE | `stock_levels` zero-balance foundation created; movement ledger deferred to Stage 1.3 |
+| R-1.2-TENANT | 1.2 | DONE | Composite branch-safe FKs, scoped route bindings, per-branch SKU/barcode/unit uniqueness and cross-branch tests |
+| R-1.2-UI | 1.2 | DONE | `/app/products` with search/filter/pagination, product/category/unit management, alternate units and conversion tool |
+| R-1.2-TESTS | 1.2 | DONE | 87 backend tests / 310 assertions pass on SQLite and MariaDB; frontend typecheck/build pass with only 2 pre-existing lint warnings |
+
+| R-1.3-LEDGER | 1.3 | DONE | Canonical `stock_movements` ledger with branch/product/quantity/unit/source/reason/actor/time |
+| R-1.3-BALANCE | 1.3 | DONE | Transaction-safe `stock_levels` projection updated under row lock |
+| R-1.3-IDEMPOTENCY | 1.3 | DONE | Branch-scoped idempotency key replay/conflict handling |
+| R-1.3-NEGATIVE | 1.3 | DONE | Negative stock rejected for opening, correction, sale and reversal |
+| R-1.3-CONCURRENCY | 1.3 | DONE | MariaDB concurrent sale/oversell test passes |
+| R-1.3-TENANT | 1.3 | DONE | Cross-branch stock reads, postings and reversals rejected |
+| R-1.3-TESTS | 1.3 | DONE | 102 backend tests / 446 assertions pass on MariaDB; SQLite blocked by missing pdo_sqlite driver |
+
+| R-1.4-CUSTOMERS | 1.4 | DONE | Branch-safe customer records with lookup/create |
+| R-1.4-DUPLICATES | 1.4 | DONE | Duplicate warnings without silent merging |
+| R-1.4-ARCHIVE | 1.4 | DONE | Customer archive semantics and status filters |
+| R-1.4-PERMISSIONS | 1.4 | DONE | `branch.customers.view` and `branch.customers.manage` |
+| R-1.4-TENANT | 1.4 | DONE | Cross-branch customer isolation tests |
+| R-1.4-TESTS | 1.4 | DONE | 109 backend tests / 490 assertions pass on MariaDB |
