@@ -19,6 +19,7 @@ class AuditLogger
         ?array $after = null,
         ?string $branchId = null,
         ?User $actor = null,
+        ?string $entityId = null,
     ): AuditLog {
         $request = request();
 
@@ -27,7 +28,7 @@ class AuditLogger
             'user_id' => $actor?->id,
             'action' => $action,
             'entity_type' => $entity instanceof Model ? $entity::class : $entity,
-            'entity_id' => $entity instanceof Model ? (string) $entity->getKey() : '',
+            'entity_id' => $entity instanceof Model ? (string) $entity->getKey() : ($entityId ?? ''),
             'ip_address' => $request?->ip(),
             'user_agent' => $request?->userAgent(),
             'before' => $before,

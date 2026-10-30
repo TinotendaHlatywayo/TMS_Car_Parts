@@ -87,6 +87,13 @@
 ## [Unreleased]
 ### Added
 - Stage 1.4: Customer records
+### Added
+- Stage 1.5: POS cart and price calculation
+  - Added `PriceCalculator` domain service for quantity, discount, floor price, tax and cart totals
+  - Added immutable price line/cart result DTOs with approval reasons
+  - Added configurable POS discount threshold via `config/pricing.php`
+  - Added audit logging for approved price overrides
+  - Added 10 price calculation tests
   - Added `customers` table with branch ownership, contact details, address, notes and active/archive state
   - Added customer list/create/show/update/archive API with branch-scoped search and pagination
   - Added `branch.customers.view` and `branch.customers.manage` permissions

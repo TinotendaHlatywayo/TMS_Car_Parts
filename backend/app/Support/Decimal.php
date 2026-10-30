@@ -13,8 +13,9 @@ final class Decimal
 
     public static function roundHalfUp(string $value, int $scale): string
     {
+        $precision = max($scale, 10);
         $multiplier = bcpow('10', (string) $scale, 0);
-        $scaled = bcadd(bcmul($value, $multiplier, $scale), '0.5', $scale);
+        $scaled = bcadd(bcmul($value, $multiplier, $precision), '0.5', $precision);
 
         return bcdiv(self::floorDecimal($scaled), $multiplier, $scale);
     }

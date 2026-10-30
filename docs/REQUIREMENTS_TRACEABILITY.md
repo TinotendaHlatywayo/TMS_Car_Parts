@@ -54,3 +54,10 @@
 | R-1.4-PERMISSIONS | 1.4 | DONE | `branch.customers.view` and `branch.customers.manage` |
 | R-1.4-TENANT | 1.4 | DONE | Cross-branch customer isolation tests |
 | R-1.4-TESTS | 1.4 | DONE | 109 backend tests / 490 assertions pass on MariaDB |
+
+| R-1.5-PRICE | 1.5 | DONE | Domain-level price calculation with quantities and snapshots |
+| R-1.5-DISCOUNT | 1.5 | DONE | Configurable allowed discount threshold |
+| R-1.5-FLOOR | 1.5 | DONE | Floor price enforcement |
+| R-1.5-TAX | 1.5 | DONE | Tax hook after net price |
+| R-1.5-APPROVAL | 1.5 | DONE | Approval path and audit with actor/reason |
+| R-1.5-TESTS | 1.5 | DONE | 119 backend tests / 529 assertions pass on MariaDB |

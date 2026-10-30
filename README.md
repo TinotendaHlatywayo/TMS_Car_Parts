@@ -19,7 +19,8 @@ Phase 1
 - 1.2 Products, categories, units and stock foundation: DONE (SQLite and MariaDB tested)
 - 1.3 Canonical stock ledger: DONE (MariaDB tested; SQLite blocked by missing pdo_sqlite driver)
 - 1.4 Customer records: DONE (MariaDB tested; SQLite blocked by missing pdo_sqlite driver)
-- 1.5+ Not started (owner approval required)
+- 1.5 POS cart and price calculation: DONE (MariaDB tested; SQLite blocked by missing pdo_sqlite driver)
+- 1.6+ Not started (owner approval required)
 
 ## Quick start (development)
 See `docs/DEVELOPMENT.md` for setup, run, test, lint/format/type commands.
@@ -28,7 +29,7 @@ See `docs/DEVELOPMENT.md` for setup, run, test, lint/format/type commands.
 - Frontend dev: `http://localhost:5173/` (Vite)
 - Backend API: `http://localhost:8000/api/` (Laravel)
 - Health: `http://localhost:8000/api/health`
-- Routes: `/`, `/login`, `/app`, `/app/products`, `/app/users`, `/platform`
+- Routes: `/`, `/login`, `/app`, `/app/products`, `/app/customers`, `/app/stock`, `/app/pos`, `/app/users`, `/platform`
 
 ## Tech stack
 - Backend: Laravel 13 + MariaDB

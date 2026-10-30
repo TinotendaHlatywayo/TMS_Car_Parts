@@ -67,3 +67,10 @@
 - **Duplicate detection**: case-insensitive name/email and normalized phone comparison within the branch; warnings do not block creation.
 - **Archive**: customers are archived with `is_active=false`; no hard delete endpoint.
 - **Privacy**: customer data is branch-scoped and requires `branch.customers.view` or `branch.customers.manage`.
+
+## 1.5 POS cart and price calculation
+- **Order**: base unit price -> quantity -> discount -> floor price -> tax -> approval.
+- **Price snapshots**: cart pricing returns immutable line and cart totals with unit price, quantity, discount, floor, tax and totals.
+- **Discount threshold**: `POS_MAX_DISCOUNT_PERCENT_WITHOUT_APPROVAL` defaults to 10 and is read from `config/pricing.php`; it is not hard-coded.
+- **Approval**: discounts above the threshold or prices below floor require approval and are audited with actor and reason.
+- **Tax**: tax is calculated on the net line total after discount/floor enforcement.

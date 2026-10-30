@@ -63,6 +63,12 @@ In production `SEED_ADMIN_PASSWORD` is required. Local development defaults to `
 - Customers are branch-owned; similar names, phone numbers or emails never merge automatically.
 - Permissions: `branch.customers.view` and `branch.customers.manage`.
 
+## POS pricing (Stage 1.5)
+- Domain service: `App\Support\PriceCalculator`
+- Price order: base price, discount, floor price, tax, approval.
+- Discount threshold is configured by `POS_MAX_DISCOUNT_PERCENT_WITHOUT_APPROVAL` (default 10).
+- Approved overrides are audited with actor and reason.
+
 ## Tests
 - Backend: `cd backend && php artisan test` (requires PHP with `pdo_sqlite`)
 - If the local PHP 8.4 CLI lacks `pdo_sqlite`, run the suite with a temporary extracted extension:

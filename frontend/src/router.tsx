@@ -3,6 +3,9 @@ import HomePage from "./pages/public/HomePage"
 import LoginPage from "./pages/auth/LoginPage"
 import DashboardPage from "./pages/app/DashboardPage"
 import ProductsPage from "./pages/app/ProductsPage"
+import CustomersPage from "./pages/app/CustomersPage"
+import StockPage from "./pages/app/StockPage"
+import PosPage from "./pages/app/PosPage"
 import UsersPage from "./pages/app/UsersPage"
 import PlatformLandingPage from "./pages/platform/LandingPage"
 import { ProtectedRoute } from "./components/layout/ProtectedRoute"
@@ -23,6 +26,18 @@ export const router = createBrowserRouter([
   {
     path: "/app/products",
     element: <ProtectedRoute><ProductsPage /></ProtectedRoute>,
+  },
+  {
+    path: "/app/customers",
+    element: <ProtectedRoute><CustomersPage /></ProtectedRoute>,
+  },
+  {
+    path: "/app/stock",
+    element: <ProtectedRoute><StockPage /></ProtectedRoute>,
+  },
+  {
+    path: "/app/pos",
+    element: <ProtectedRoute><PosPage /></ProtectedRoute>,
   },
   {
     path: "/app/users",
