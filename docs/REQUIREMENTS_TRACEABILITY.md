@@ -61,3 +61,10 @@
 | R-1.5-TAX | 1.5 | DONE | Tax hook after net price |
 | R-1.5-APPROVAL | 1.5 | DONE | Approval path and audit with actor/reason |
 | R-1.5-TESTS | 1.5 | DONE | 119 backend tests / 529 assertions pass on MariaDB |
+
+| R-1.6-CHECKOUT | 1.6 | DONE | Transactional POS checkout |
+| R-1.6-IDEMPOTENCY | 1.6 | DONE | Duplicate submission/retry protection |
+| R-1.6-PAYMENTS | 1.6 | DONE | Separate sale/payment states and split payments |
+| R-1.6-RECEIPT | 1.6 | DONE | Unique receipt and print view |
+| R-1.6-STOCK | 1.6 | DONE | Stock movement posted with checkout rollback |
+| R-1.6-TESTS | 1.6 | DONE | 126 backend tests / 568 assertions pass on MariaDB |

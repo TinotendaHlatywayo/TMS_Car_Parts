@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\BranchRoleController;
 use App\Http\Controllers\Api\BranchUserController;
 use App\Http\Controllers\Api\CategoryController;
+use App\Http\Controllers\Api\CheckoutController;
 use App\Http\Controllers\Api\CustomerController;
 use App\Http\Controllers\Api\HealthController;
 use App\Http\Controllers\Api\MeController;
@@ -74,6 +75,10 @@ Route::middleware(['auth:sanctum', 'active'])->group(function () {
             Route::post('/products/{product}/convert', ProductConversionController::class)
                 ->middleware('branch.permission:branch.inventory.view');
 
+            Route::post('/checkout', [CheckoutController::class, 'store'])
+                ->middleware('branch.permission:branch.sales.create');
+            Route::get('/sales/{sale}', [CheckoutController::class, 'show'])
+                ->middleware('branch.permission:branch.sales.view');
             Route::get('/customers', [CustomerController::class, 'index'])
                 ->middleware('branch.permission:branch.customers.view');
             Route::post('/customers', [CustomerController::class, 'store'])

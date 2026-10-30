@@ -89,6 +89,13 @@
 - Stage 1.4: Customer records
 ### Added
 - Stage 1.5: POS cart and price calculation
+### Added
+- Stage 1.6: Checkout, payments and receipt
+  - Added `sales`, `sale_items`, `payments` and `receipts` tables
+  - Added transactional checkout API with idempotency and stock movement posting
+  - Added separate sale/payment states, split payments and unique receipts
+  - Added sale detail and receipt print view
+  - Added 7 checkout tests
   - Added `PriceCalculator` domain service for quantity, discount, floor price, tax and cart totals
   - Added immutable price line/cart result DTOs with approval reasons
   - Added configurable POS discount threshold via `config/pricing.php`

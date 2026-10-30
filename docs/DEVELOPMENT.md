@@ -69,6 +69,11 @@ In production `SEED_ADMIN_PASSWORD` is required. Local development defaults to `
 - Discount threshold is configured by `POS_MAX_DISCOUNT_PERCENT_WITHOUT_APPROVAL` (default 10).
 - Approved overrides are audited with actor and reason.
 
+## Checkout (Stage 1.6)
+- `POST /api/branches/{branch}/checkout` requires `Idempotency-Key`.
+- `GET /api/branches/{branch}/sales/{sale}` returns sale, items, payments and receipt.
+- Frontend receipt view: `/app/sales/{saleId}/receipt`.
+
 ## Tests
 - Backend: `cd backend && php artisan test` (requires PHP with `pdo_sqlite`)
 - If the local PHP 8.4 CLI lacks `pdo_sqlite`, run the suite with a temporary extracted extension:

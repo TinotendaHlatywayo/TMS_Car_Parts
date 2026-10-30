@@ -74,3 +74,11 @@
 - **Discount threshold**: `POS_MAX_DISCOUNT_PERCENT_WITHOUT_APPROVAL` defaults to 10 and is read from `config/pricing.php`; it is not hard-coded.
 - **Approval**: discounts above the threshold or prices below floor require approval and are audited with actor and reason.
 - **Tax**: tax is calculated on the net line total after discount/floor enforcement.
+
+## 1.6 Checkout, payments and receipt
+- **Transaction**: checkout posts sale, items, payments, stock movements and receipt in one DB transaction.
+- **Idempotency**: branch-scoped `Idempotency-Key` replays the original sale or rejects a changed payload.
+- **States**: sale status (`posted`) and payment status (`unpaid`, `partial`, `paid`) are stored separately.
+- **Payments**: split payments are supported in branch currency; amounts must equal the sale total.
+- **Receipts**: each sale has one unique receipt number allocated under lock.
+- **Stock**: tracked products post a sale movement; insufficient stock rolls back the entire checkout.

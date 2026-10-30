@@ -6,6 +6,7 @@ import ProductsPage from "./pages/app/ProductsPage"
 import CustomersPage from "./pages/app/CustomersPage"
 import StockPage from "./pages/app/StockPage"
 import PosPage from "./pages/app/PosPage"
+import ReceiptPage from "./pages/app/ReceiptPage"
 import UsersPage from "./pages/app/UsersPage"
 import PlatformLandingPage from "./pages/platform/LandingPage"
 import { ProtectedRoute } from "./components/layout/ProtectedRoute"
@@ -38,6 +39,10 @@ export const router = createBrowserRouter([
   {
     path: "/app/pos",
     element: <ProtectedRoute><PosPage /></ProtectedRoute>,
+  },
+  {
+    path: "/app/sales/:saleId/receipt",
+    element: <ProtectedRoute><ReceiptPage /></ProtectedRoute>,
   },
   {
     path: "/app/users",

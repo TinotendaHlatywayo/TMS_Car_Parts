@@ -23,6 +23,8 @@ return new class extends Migration
             $table->index(['branch_id', 'is_active', 'name']);
             $table->index(['branch_id', 'phone']);
             $table->index(['branch_id', 'email']);
+
+            $table->unique(['id', 'branch_id']);
         });
     }
 
