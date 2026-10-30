@@ -74,6 +74,12 @@ In production `SEED_ADMIN_PASSWORD` is required. Local development defaults to `
 - `GET /api/branches/{branch}/sales/{sale}` returns sale, items, payments and receipt.
 - Frontend receipt view: `/app/sales/{saleId}/receipt`.
 
+## Sales history (Stage 1.7)
+- `GET /api/branches/{branch}/sales` lists sales.
+- `POST /api/branches/{branch}/sales/{sale}/void` requires `branch.sales.void`.
+- `POST /api/branches/{branch}/sales/{sale}/returns` creates a return request.
+- Frontend: `/app/sales`.
+
 ## Tests
 - Backend: `cd backend && php artisan test` (requires PHP with `pdo_sqlite`)
 - If the local PHP 8.4 CLI lacks `pdo_sqlite`, run the suite with a temporary extracted extension:

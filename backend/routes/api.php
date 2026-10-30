@@ -11,6 +11,7 @@ use App\Http\Controllers\Api\PlatformAccessController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\ProductConversionController;
 use App\Http\Controllers\Api\ProductUnitController;
+use App\Http\Controllers\Api\SaleController;
 use App\Http\Controllers\Api\StockLevelController;
 use App\Http\Controllers\Api\StockMovementController;
 use App\Http\Controllers\Api\UnitController;
@@ -78,6 +79,16 @@ Route::middleware(['auth:sanctum', 'active'])->group(function () {
             Route::post('/checkout', [CheckoutController::class, 'store'])
                 ->middleware('branch.permission:branch.sales.create');
             Route::get('/sales/{sale}', [CheckoutController::class, 'show'])
+                ->middleware('branch.permission:branch.sales.view');
+            Route::get('/sales', [SaleController::class, 'index'])
+                ->middleware('branch.permission:branch.sales.view');
+            Route::post('/sales/{sale}/void', [SaleController::class, 'void'])
+                ->middleware('branch.permission:branch.sales.void');
+            Route::get('/returns', [SaleController::class, 'returnsIndex'])
+                ->middleware('branch.permission:branch.sales.view');
+            Route::post('/sales/{sale}/returns', [SaleController::class, 'storeReturn'])
+                ->middleware('branch.permission:branch.sales.void');
+            Route::get('/returns/{saleReturn}', [SaleController::class, 'showReturn'])
                 ->middleware('branch.permission:branch.sales.view');
             Route::get('/customers', [CustomerController::class, 'index'])
                 ->middleware('branch.permission:branch.customers.view');

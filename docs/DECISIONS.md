@@ -82,3 +82,9 @@
 - **Payments**: split payments are supported in branch currency; amounts must equal the sale total.
 - **Receipts**: each sale has one unique receipt number allocated under lock.
 - **Stock**: tracked products post a sale movement; insufficient stock rolls back the entire checkout.
+
+## 1.7 Sales history and correction foundation
+- **History**: branch-scoped sales list/detail with status and payment filters.
+- **Void**: authorized void reverses stock and marks sale/payment voided; duplicate void is idempotent.
+- **Returns**: return requests record authorization, quantity, restock decision and refund/credit state; stock restock and refund execution are documented follow-up work.
+- **No hard deletes**: posted sales remain and are corrected through void/reversal/return records.

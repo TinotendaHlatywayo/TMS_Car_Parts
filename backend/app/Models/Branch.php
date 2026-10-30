@@ -57,6 +57,11 @@ class Branch extends Model
         return $this->hasMany(Receipt::class);
     }
 
+    public function saleReturns(): HasMany
+    {
+        return $this->hasMany(SaleReturn::class);
+    }
+
     public function stockMovements(): HasMany
     {
         return $this->hasMany(StockMovement::class);

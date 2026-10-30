@@ -68,3 +68,9 @@
 | R-1.6-RECEIPT | 1.6 | DONE | Unique receipt and print view |
 | R-1.6-STOCK | 1.6 | DONE | Stock movement posted with checkout rollback |
 | R-1.6-TESTS | 1.6 | DONE | 126 backend tests / 568 assertions pass on MariaDB |
+
+| R-1.7-HISTORY | 1.7 | DONE | Sales history and detail |
+| R-1.7-VOID | 1.7 | DONE | Authorized void with stock reversal |
+| R-1.7-RETURNS | 1.7 | DONE | Return workflow foundation |
+| R-1.7-PERMISSIONS | 1.7 | DONE | Permission and duplicate void/return tests |
+| R-1.7-TESTS | 1.7 | DONE | 133 backend tests / 613 assertions pass on MariaDB |

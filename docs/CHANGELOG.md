@@ -91,6 +91,12 @@
 - Stage 1.5: POS cart and price calculation
 ### Added
 - Stage 1.6: Checkout, payments and receipt
+### Added
+- Stage 1.7: Sales history and correction foundation
+  - Added sales history/detail API and frontend page
+  - Added authorized sale void with stock reversal
+  - Added sale return request foundation with duplicate protection
+  - Added 7 sales history/correction tests
   - Added `sales`, `sale_items`, `payments` and `receipts` tables
   - Added transactional checkout API with idempotency and stock movement posting
   - Added separate sale/payment states, split payments and unique receipts

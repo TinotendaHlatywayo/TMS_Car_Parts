@@ -15,6 +15,9 @@ class Sale extends Model
     protected $fillable = [
         'branch_id',
         'customer_id',
+        'voided_at',
+        'voided_by',
+        'void_reason',
         'sale_number',
         'status',
         'payment_status',
@@ -35,6 +38,7 @@ class Sale extends Model
         'tax_minor' => 'integer',
         'total_minor' => 'integer',
         'paid_minor' => 'integer',
+        'voided_at' => 'datetime',
     ];
 
     public function branch(): BelongsTo
@@ -65,5 +69,15 @@ class Sale extends Model
     public function receipt(): HasOne
     {
         return $this->hasOne(Receipt::class);
+    }
+
+    public function returns(): HasMany
+    {
+        return $this->hasMany(SaleReturn::class);
+    }
+
+    public function voidedBy(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'voided_by');
     }
 }

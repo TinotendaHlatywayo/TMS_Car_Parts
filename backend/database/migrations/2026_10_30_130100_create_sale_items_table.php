@@ -25,6 +25,8 @@ return new class extends Migration
             $table->string('currency_code', 3);
             $table->timestamp('created_at')->useCurrent();
 
+            $table->unique(['id', 'branch_id']);
+
             $table->foreign(['sale_id', 'branch_id'])
                 ->references(['id', 'branch_id'])
                 ->on('sales')
